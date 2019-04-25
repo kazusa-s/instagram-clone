@@ -1,0 +1,17 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">
+    <%= image_tag("https://fontmeme.com/permalink/190421/6d63b1b1eeebbfd2011a7024a34c39e2.png", class: "insta-header-img") %>
+    </a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "add img", new_post_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+
+  <li class="nav-item">
+    <%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+  </li>
+</ul>
