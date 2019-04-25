@@ -4,7 +4,9 @@
       <div class="card">
         <div class="card-header align-items-center d-flex">
 
-
+          <% if post.user_id == current_user.id %>
+            <%= link_to "delete", post_path(post), method: :delete, data: {confirm: '削除しますか？'}, class: "ml-auto mx-0 my-auto"  %>
+          <% end %>
         </div>
 
 
