@@ -9,6 +9,8 @@
     <a class="nav-link" href="#">Link</a>
   </li>
 
+  <%= link_to "マイページ", user_path(current_user), class: "nav-link" %>
+
   <li class="nav-item">
     <%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
   </li>

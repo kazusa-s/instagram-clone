@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   # root to: 'home#index'
   root to: 'posts#index'
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users,
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
+                 registrations: 'registrations' }
+
+  get '/users/:id', to: 'users#show', as: 'user'
 
   resources :posts, only: %i(new create index show destroy) do
     resources :photos, only: %i(create)
