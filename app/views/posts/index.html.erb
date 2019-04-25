@@ -8,8 +8,11 @@
         </div>
 
 
+        <%= link_to post_path(post), remote: true do %>
+          <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top", "data-toggle": "modal" , "data-target": "#exampleModalLong"%>
+        <% end %>
 
-          <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"></div>
 
         <div class="card-body">
           <div class="row parts">
@@ -34,3 +37,4 @@
     </div>
   </div>
 <% end %>
+

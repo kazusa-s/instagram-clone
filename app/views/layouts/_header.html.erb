@@ -1,8 +1,6 @@
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link active" href="#">
-    <%= image_tag("https://fontmeme.com/permalink/190421/6d63b1b1eeebbfd2011a7024a34c39e2.png", class: "insta-header-img") %>
-    </a>
+    <%= link_to image_tag("https://fontmeme.com/permalink/190421/6d63b1b1eeebbfd2011a7024a34c39e2.png", class: "insta-header-img nav-link active"), root_path %>
   </li>
   <li class="nav-item">
     <%= link_to "add img", new_post_path, class: "nav-link" %>

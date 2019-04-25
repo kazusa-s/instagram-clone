@@ -2,15 +2,15 @@
 <div class="form-box">
 
 <div class="card text-center">
-  <div class="card-header">
 
-    <!-- use Font Meme -->
+
+
+  <div class="card-body">
+
+      <!-- use Font Meme -->
     <%= image_tag("https://fontmeme.com/permalink/190421/6d63b1b1eeebbfd2011a7024a34c39e2.png", class: "insta-title-img") %>
     <!-- use Font Meme -->
 
-
-  </div>
-  <div class="card-body">
 
     <%- if devise_mapping.omniauthable? %>
       <%- resource_class.omniauth_providers.each do |provider| %>
@@ -18,7 +18,7 @@
       <% end %>
     <% end %>
 
-    <p class="card-text">または</p>
+    <p class="card-text" style="margin-top:10%;">または</p>
 
 
 
