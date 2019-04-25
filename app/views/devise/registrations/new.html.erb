@@ -1,29 +1,59 @@
-<h2>Sign up</h2>
+<div class="card text-center form-box">
+  <div class="card-body">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <!-- use Font Meme -->
+  <%= image_tag("https://fontmeme.com/permalink/190421/6d63b1b1eeebbfd2011a7024a34c39e2.png", class: "insta-title-img") %>
+  <!-- use Font Meme -->
+
+  <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to "#{OmniAuth::Utils.camelize(provider)} で登録する", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary" %><br />
+    <% end %>
+  <% end %>
+
+  <p class="card-text" style="margin-top:10%;">または</p>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div style="margin:40px; 0 auto;">
+
+    <div class="form-group">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, autocomplete: "username", placeholder: "ユーザーネーム", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(６文字以上)", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード", class: "form-control" %>
+      </div>
+    </div>
+
+
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <div class="actions ">
+    <%= f.submit "登録する" ,class: "btn btn-primary" %>
+  </div><br />
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <p class="card-text">アカウントをお持ちの方は
+    <%= link_to "こちら", new_session_path(resource_name) %>
+  </p>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  </div>
+</div>
