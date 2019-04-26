@@ -9,7 +9,8 @@
   background-color: white;
   margin: 0 auto;
   padding: 5%;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .form-box input[type="file"] {
@@ -18,6 +19,17 @@
 
 .form-box input[type="text"] {
   width: 100%;
+}
+
+.devise-alert {
+  margin: 0 auto;
+  margin-bottom: 1%;
+  text-align: center;
+  width: 80%;
+}
+
+#error_explanation h2 {
+  color: tomato;
 }
 
 

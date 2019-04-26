@@ -16,6 +16,19 @@
     </div>
 
     <div class="container" style="padding:5%;">
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success devise-alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger devise-alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    
     <%= yield %>
     </div>
   </body>

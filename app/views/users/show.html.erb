@@ -1,8 +1,14 @@
-<%= image_tag avatar_url(@user), class: "round-img" %>
-
-<h1><%= @user.name %></h1>
-
-<% if @user == current_user %>
-  <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
-<% end %>
-<%= @user.email %>
+<div class="card">
+  <div class="card-body">
+  <%= image_tag avatar_url(@user), class: "round-img" %>
+    <div style="display: inline-block; margin:0 10%; float:right">
+      <h2><%= @user.name %></h2>
+      <%= @user.email %>
+    </div>
+    <div style="display: inline-block; margin:0 10%; float:right">
+    <% if @user == current_user %>
+      <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
+    <% end %>
+    </div>
+  </div>
+</div>
