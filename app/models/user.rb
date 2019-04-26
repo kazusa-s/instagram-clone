@@ -41,5 +41,10 @@ class User < ApplicationRecord
     result
   end
 
+  def self.get_provider(id)
+    user = self.find_by(id: id)
+    return user.provider
+  end
+
 
 end

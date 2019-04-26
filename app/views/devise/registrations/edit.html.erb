@@ -18,6 +18,7 @@
     </div>
   </div>
 
+  <% if User.get_provider(current_user.id) != "facebook" %>
   <div class="field">
     <div class="form-group">
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "新しいパスワード(６文字以上)", class: "form-control" %>
@@ -29,6 +30,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "新しいパスワード(確認)", class: "form-control" %>
     </div>
   </div>
+  <% end %>
 
   <div class="field">
     <div class="form-group">
