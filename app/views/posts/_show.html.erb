@@ -17,7 +17,25 @@
     <div class="col-md-4">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">
+        
+
+                    <div id="comment-post-modal-<%= @post.id.to_s %>">
+                <%= render 'comment_list', post: @post %>
+              </div>
+
+
+                      <div class="row parts" id="comment-form-post-modal-<%= @post.id.to_s %>">
+          <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :post_id, value: @post.id %>
+            <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+          <% end %>
+        </div>
+
+
+
+        </p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
