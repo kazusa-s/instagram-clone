@@ -29,13 +29,15 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "新しいパスワード(確認)", class: "form-control" %>
     </div>
   </div>
-  <% end %>
-
+  
   <div class="field">
     <div class="form-group">
     <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワード", class: "form-control" %>
     </div>
   </div>
+
+  <% end %>
+
 
   <div class="actions">
     <%= f.submit "更新する",class: "btn btn-primary" %>
