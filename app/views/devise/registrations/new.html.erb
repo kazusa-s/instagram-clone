@@ -17,7 +17,7 @@
 
   <% if resource.errors.any? %>
   <ul>
-    <% resource.errors.full_messages.rotate(2).each do |message| %>
+    <% resource.errors.full_messages.each do |message| %>
       <li class="sign-up-errors"><%= message %></li>
     <% end %>
   </ul>
