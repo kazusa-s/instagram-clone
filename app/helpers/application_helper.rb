@@ -6,4 +6,13 @@ module ApplicationHelper
     "https://www.gravatar.com/avatar/#{gravatar_id}.jpg"
   end
 
+  def full_title(page_title = '')
+    base_title = "Instagram-clone"
+    if page_title.empty?
+      base_title
+    else
+      page_title + " | " + base_title
+    end
+  end
+
 end
