@@ -6,6 +6,7 @@ Rails.application.routes.draw do
                  registrations: 'registrations' }
 
   get '/users/:id', to: 'users#show', as: 'user'
+  get '/users', to: redirect("/users/sign_up")
 
   resources :posts, only: %i(new create index show destroy) do
     resources :photos, only: %i(create)
