@@ -1,11 +1,22 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-
   before_action :set_post, only: [:show, :destroy]
 
   def index
     # @posts = Post.limit(10).order('created_at DESC')
-    @posts = Post.limit(10).includes(:photos, :user).order('created_at DESC')
+    @posts = Post.includes(:photos, :user).order('created_at DESC')
+  end
+
+  def search_result
+    if @search_articles.present?
+      @posts = @search_articles
+      flash.now[:notice] = "#{@posts.size}件ヒットしました。"
+      render 'index'
+    else
+      @posts = @search_articles
+      flash.now[:alert] = "検索結果はありません。"
+      render 'index'
+    end
   end
 
   def show

@@ -70,3 +70,4 @@ gem 'omniauth'
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'mysql2', group: :development
+gem 'ransack'
