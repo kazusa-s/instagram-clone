@@ -47,9 +47,8 @@ docker環境で起動することができたことです。
 ---dockerでの起動(macのみ)---
 
 ①database.ymlを以下のように編集
-
+```ruby
 development:
-  #postgresql
   # <<: *default    #コメントアウトする
 
   #mysql
@@ -75,6 +74,7 @@ development:
     password: password
     host: db
     <!-- 下記のコードのコメントアウトを解除 -->
+  ```
 
 ② ターミナルで以下のコマンドを実行
 
