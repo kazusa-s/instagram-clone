@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>InstagramClone</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+    <%= render 'layouts/head' %>
+
   </head>
 
   <body>
+
+    <%  if current_user  %>
+    <div id="header-part">
+      <%= render 'layouts/header' %>
+    </div>
+    <% end %>
+
+    <div class="container" style="padding:5%;">
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success devise-alert">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger devise-alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+
     <%= yield %>
+    </div>
+    <%= render 'layouts/footer' if current_user %>
   </body>
 </html>

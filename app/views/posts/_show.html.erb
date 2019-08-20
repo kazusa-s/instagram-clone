@@ -1,0 +1,36 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modeal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-8">
+            <%= image_tag @post.photos.first.image.url(:medium), class: "card-img-top" %>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <span>posted by <strong><%= @post.user.name %></strong></span>
+              <span><%= @post.caption %></span>
+              <div id="comment-post-modal-<%= @post.id.to_s %>">
+                <%= render 'comment_list', post: @post %>
+              </div>
+              <p class="light-color post-time no-text-decoration"><%= time_ago_in_words(@post.created_at).upcase + "前" %></p>
+              <hr>
+                <div class="row parts" id="comment-form-post-modal-<%= @post.id.to_s %>">
+                  <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :post_id, value: @post.id %>
+                    <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+                  <% end %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="card text-center form-box">
+  <div class="card-body">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "username", placeholder: "ユーザーネーム", class: "form-control" %>
+    </div>
+  </div>
+
+  <% if User.get_provider(current_user.id) != "facebook" %>
+  <div class="field">
+    <div class="form-group">
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "新しいパスワード(６文字以上)", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="form-group">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "新しいパスワード(確認)", class: "form-control" %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <div class="form-group">
+    <%= f.password_field :current_password, autocomplete: "current-password", placeholder: "現在のパスワード", class: "form-control" %>
+    </div>
+  </div>
+
+  <% end %>
+
+
+  <div class="actions">
+    <%= f.submit "更新する",class: "btn btn-primary" %>
+  </div><br />
+  <% end %>
+
+  <%= button_to "登録解除する", registration_path(resource_name), data: { confirm: "もう二度とログインすることや投稿した写真を閲覧することができなくなります。本当によろしいですか?" }, method: :delete, class: "btn btn-danger" %><br />
+
+  <%= link_to "マイページへ戻る", :back %>
+
+  </div>
+</div>

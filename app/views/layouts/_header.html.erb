@@ -1,0 +1,20 @@
+<%= link_to image_tag("https://fontmeme.com/permalink/190421/6d63b1b1eeebbfd2011a7024a34c39e2.png", class: "insta-header-img nav-link active"), root_path %>
+
+<div style="float:left; margin:10px 0 0 150px; width:50%;">
+<%= search_form_for @search, url: search_result_path, class: "form-inline my-2 my-lg-0" do |f| %>
+<%= f.search_field :caption_cont ,placeholder: 'キーワード',class:"form-control mr-sm-2" %>
+<%= f.submit ("検索") , class: 'btn btn-outline-success my-2 my-sm-0'%></dd>
+<% end %>
+</div>
+
+<ul class="nav" style="margin-top:15px; float:right;">
+
+  <li class="nav-item">
+    <%= link_to "", user_path(current_user), class: "nav-link mypage-icon" %>
+  </li>
+
+
+  <li class="nav-item">
+    <%= link_to "", destroy_user_session_path,data: {confirm: "ログアウトしますか？"}, method: :delete, class: "nav-link logout-img" %>
+  </li>
+</ul>

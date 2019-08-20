@@ -1,0 +1,30 @@
+#header-part{
+  background-color: #ffffff;
+  // position: fixed;
+  // top: 0;
+  z-index: 10;
+  // width: 100%;
+  height: 60px;
+}
+
+.insta-header-img{
+  width:100%;
+  max-width: 200px;
+  float:left;
+}
+
+.mypage-icon {
+  background-image: image-url("parts3");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: 20px !important;
+}
+
+.logout-img {
+  background-image: image-url("parts10");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: 20px !important;
+}

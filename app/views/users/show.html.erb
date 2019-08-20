@@ -1,0 +1,18 @@
+<% provide(:title, 'profile') %>
+
+<div class="card">
+  <div class="card-body">
+    <div id="profile-img-box">
+      <%= image_tag avatar_url(@user), class: "round-img" %>
+    </div>
+    <div id="profile-txt-box">
+      <h2><%= @user.name %></h2>
+      <%= @user.email %>
+    </div>
+    <div id="profile-btn-box">
+      <% if @user == current_user %>
+        <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
