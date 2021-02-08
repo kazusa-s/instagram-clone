@@ -67,7 +67,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass', '3.3.7'
 gem 'omniauth-facebook'
 gem 'omniauth'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem "mini_magick"
 gem 'mysql2', group: :development
 gem 'ransack'
